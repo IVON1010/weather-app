@@ -54,3 +54,8 @@ async function fetchForecast(){
   fetchWeatherBtn.addEventListener("click", function() {
     fetchWeather();
   });
+
+  // Event listener for searching day
+  searchBtn.addEventListener("click", function() {
+    searchDay();
+  });
