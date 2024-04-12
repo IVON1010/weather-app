@@ -1,6 +1,6 @@
-const base_url = "http://localhost:3000/current";
-const location_url = "http://localhost:3000/location";
-const forecast_url = "http://localhost:3000/forecast";
+const base_url = "https://my-json-server.typicode.com/IVON1010/weather-app/db";
+const location_url = "https://my-json-server.typicode.com/IVON1010/weather-app/db";
+const forecast_url = "https://my-json-server.typicode.com/IVON1010/weather-app/db";
 
 fetchCurrent();
 
