@@ -77,3 +77,55 @@ function fetchWeather() {
       })
       .catch(error => console.error("Error fetching weather:", error));
   }
+
+  // Function to display weather information
+  function displayWeather(data) {
+    // Display current weather information
+    const currentWeather = data.current;
+    const location = data.location;
+
+    // Create elements
+    const card = document.createElement("div");
+    card.classList.add("card");
+  
+    const cardHeader = document.createElement("div");
+    cardHeader.classList.add("card-header");
+    cardHeader.textContent = `Current Weather in ${location.name}`;
+  
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    const image = document.createElement("img");
+    image.textContent = `image: ${currentWeather.temperature}`;
+  
+    const temperature = document.createElement("p");
+    temperature.textContent = `Temperature: ${currentWeather.temperature}°F`;
+  
+    const sky = document.createElement("p");
+    sky.textContent = `Sky: ${currentWeather.skytext}`;
+  
+    const feelsLike = document.createElement("p");
+    feelsLike.textContent = `Feels Like: ${currentWeather.feelslike}°F`;
+  
+    const humidity = document.createElement("p");
+    humidity.textContent = `Humidity: ${currentWeather.humidity}%`;
+  
+    const wind = document.createElement("p");
+    wind.textContent = `Wind: ${currentWeather.winddisplay}`;
+
+
+    // Append elements
+    cardBody.appendChild(temperature);
+    cardBody.appendChild(sky);
+    cardBody.appendChild(feelsLike);
+    cardBody.appendChild(humidity);
+    cardBody.appendChild(wind);
+  
+    card.appendChild(cardHeader);
+    card.appendChild(cardBody);
+
+     // Clear existing content and append new content
+     weatherInfo.innerHTML = '';
+     weatherInfo.appendChild(card);
+   }
+
