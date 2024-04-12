@@ -29,3 +29,17 @@ async function fetchLocation(){
         console.log(data) 
     })
   }
+
+  fetchForecast();
+
+async function fetchForecast(){
+    fetch(`${forecast_url}`, {
+        method: 'GET',
+        headers: {
+            'content-type' : 'applocation/json'
+        }
+    }).then(res => res.json())
+    .then(data => {
+        console.log(data) 
+    })
+  }
