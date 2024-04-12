@@ -129,3 +129,13 @@ function fetchWeather() {
      weatherInfo.appendChild(card);
    }
 
+    // Function to search for a specific day in the forecast
+  function searchDay() {
+    const searchValue = searchInput.value.toLowerCase();
+    fetch("db.json")
+      .then(response => response.json())
+      .then(data => {
+        const forecast = data.forecast;
+        const filteredForecast = forecast.filter(day => day.day.toLowerCase().includes(searchValue));
+
+
