@@ -138,4 +138,43 @@ function fetchWeather() {
         const forecast = data.forecast;
         const filteredForecast = forecast.filter(day => day.day.toLowerCase().includes(searchValue));
 
+        // Display search results
+        if (filteredForecast.length > 0) {
+            displaySearchResults(filteredForecast);
+          } else {
+            alert("No matching days found.");
+          }
+        })
+        .catch(error => console.error("Error fetching weather:", error));
+    }
+
+    // Function to display search results
+  function displaySearchResults(results) {
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card');
+
+    const cardHeaderDiv = document.createElement('div');
+    cardHeaderDiv.classList.add('card-header');
+    cardHeaderDiv.textContent = 'Search Results';
+    cardDiv.appendChild(cardHeaderDiv);
+
+    const cardBodyDiv = document.createElement('div');
+    cardBodyDiv.classList.add('card-body');
+
+    results.forEach(day => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = `${day.day}: Low ${day.low}°F, High ${day.high}°F, ${day.skytextday}`;
+        cardBodyDiv.appendChild(paragraph);
+    });
+
+    cardDiv.appendChild(cardBodyDiv);
+
+    weatherInfo.innerHTML = '';
+    weatherInfo.appendChild(cardDiv);
+}
+});
+
+  
+
+
 
