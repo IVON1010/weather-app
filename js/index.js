@@ -44,4 +44,8 @@ async function fetchForecast(){
     })
   }
 
-    document.addEventListener("DOMContentLoaded", function() {})
+    document.addEventListener("DOMContentLoaded", function() {
+        const fetchWeatherBtn = document.getElementById("fetchWeatherBtn");
+    const searchBtn = document.getElementById("searchBtn");
+    const searchInput = document.getElementById("searchInput");
+    const weatherInfo = document.getElementById("weatherInfo");
