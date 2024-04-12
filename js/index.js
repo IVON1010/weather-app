@@ -66,3 +66,14 @@ async function fetchForecast(){
       searchDay();
     }
   });
+
+  // Function to fetch weather
+function fetchWeather() {
+    // Fetch weather data from db.json
+    fetch("db.json")
+      .then(response => response.json())
+      .then(data => {
+        displayWeather(data);
+      })
+      .catch(error => console.error("Error fetching weather:", error));
+  }
