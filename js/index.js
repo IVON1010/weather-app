@@ -59,3 +59,10 @@ async function fetchForecast(){
   searchBtn.addEventListener("click", function() {
     searchDay();
   });
+
+   // Event listener for pressing Enter key in search input
+   searchInput.addEventListener("keypress", function(event) {
+    if (event.key === 'Enter') {
+      searchDay();
+    }
+  });
