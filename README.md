@@ -21,9 +21,9 @@ Usage
 JavaScript File
 The JavaScript file (index.js) contains functions to fetch current weather data, location data, and forecast data from the specified URLs. Here are the URLs defined in the JavaScript file:
 
-Base URL for current weather data: const base_url = "http://localhost:3000/current"
-URL for location data: const location_url = "http://localhost:3000/location"
-URL for forecast data: const forecast_url = "http://localhost:3000/forecast"
+Base URL for current weather data: const base_url = "https://my-json-server.typicode.com/IVON1010/weather-app/db"
+URL for location data: const location_url = "https://my-json-server.typicode.com/IVON1010/weather-app/db"
+URL for forecast data: const forecast_url = "https://my-json-server.typicode.com/IVON1010/weather-app/db"
 HTML File
 The HTML file (index.html) provides the structure and layout for the Weather App. It includes elements for displaying current weather information and a search feature for finding specific days in the forecast.
 
