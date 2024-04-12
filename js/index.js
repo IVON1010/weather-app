@@ -43,3 +43,5 @@ async function fetchForecast(){
         console.log(data) 
     })
   }
+
+    document.addEventListener("DOMContentLoaded", function() {})
