@@ -15,3 +15,17 @@ async function fetchCurrent(){
         console.log(data) 
     })
   }
+
+  fetchLocation();
+
+async function fetchLocation(){
+    fetch(`${location_url}`, {
+        method: 'GET',
+        headers: {
+            'content-type' : 'applocation/json'
+        }
+    }).then(res => res.json())
+    .then(data => {
+        console.log(data) 
+    })
+  }
