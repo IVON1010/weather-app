@@ -1,6 +1,4 @@
 const base_url = "https://my-json-server.typicode.com/IVON1010/weather-app/db";
-const location_url = "https://my-json-server.typicode.com/IVON1010/weather-app/db";
-const forecast_url = "https://my-json-server.typicode.com/IVON1010/weather-app/db";
 
 fetchCurrent();
 
@@ -16,7 +14,7 @@ async function fetchCurrent(){
     })
   }
 
-  fetchLocation();
+  /*fetchLocation();
 
 async function fetchLocation(){
     fetch(`${location_url}`, {
@@ -30,9 +28,9 @@ async function fetchLocation(){
     })
   }
 
-  fetchForecast();
+  fetchForecast();*/
 
-async function fetchForecast(){
+/*async function fetchForecast(){
     fetch(`${forecast_url}`, {
         method: 'GET',
         headers: {
@@ -42,7 +40,7 @@ async function fetchForecast(){
     .then(data => {
         console.log(data) 
     })
-  }
+  }*/
 
     document.addEventListener("DOMContentLoaded", function() {
         const fetchWeatherBtn = document.getElementById("fetchWeatherBtn");
@@ -70,7 +68,7 @@ async function fetchForecast(){
   // Function to fetch weather
 function fetchWeather() {
     // Fetch weather data from db.json
-    fetch("db.json")
+    fetch(`${base_url}`)
       .then(response => response.json())
       .then(data => {
         displayWeather(data);
@@ -132,7 +130,7 @@ function fetchWeather() {
     // Function to search for a specific day in the forecast
   function searchDay() {
     const searchValue = searchInput.value.toLowerCase();
-    fetch("db.json")
+    fetch(`${base_url}`)
       .then(response => response.json())
       .then(data => {
         const forecast = data.forecast;
