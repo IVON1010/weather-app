@@ -49,3 +49,8 @@ async function fetchForecast(){
     const searchBtn = document.getElementById("searchBtn");
     const searchInput = document.getElementById("searchInput");
     const weatherInfo = document.getElementById("weatherInfo");
+
+    // Event listener for fetching weather
+  fetchWeatherBtn.addEventListener("click", function() {
+    fetchWeather();
+  });
